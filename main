@@ -67,15 +67,6 @@ Z = .5 .* (Z + Z.' );
 Z = -1 .* Z;
 
 
-
-% A = (as_ele_Tx * as_ele_Tx').';
-% A = .5 .* (A + A');
-% gamma_dB = 1.2;               % tradeoff gain in dB
-% gamma_gain = 10^(gamma_dB./10);    % tradeoff gain in linear scale
-% Z = J ^ 2 * P / gamma_gain;
-% 
-% 
-
 % SDP
 
 yalmip('clear')
@@ -107,10 +98,6 @@ Constraints = [Constraints, real(out_normal) * (F(ltri_r(i), ltri_c(i)) + F(ltri
  
 
 end
-
-% Constraints = [Constraints,  norm(F,1) >= J - 1];
-
-% Constraints = [Constraints];
 
 
 % Define an objective
